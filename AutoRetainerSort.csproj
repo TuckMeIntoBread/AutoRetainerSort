@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{399608D9-1605-4D75-A29F-2D65BA648A77}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>AutoRetainerSort</RootNamespace>
+        <AssemblyName>AutoRetainerSort</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+      <Compile Include="AddNewInventoryForm.cs" />
+      <Compile Include="AddNewInventoryForm.Designer.cs" />
+      <Compile Include="AddNewItemForm.cs" />
+      <Compile Include="AddNewItemForm.Designer.cs" />
+      <Compile Include="AutoRetainerSortBase.cs" />
+      <Compile Include="AutoRetainerSortForm.cs" />
+      <Compile Include="AutoRetainerSortForm.Designer.cs" />
+      <Compile Include="AutoRetainerSortSettings.cs" />
+      <Compile Include="Classes\CachedInventory.cs" />
+      <Compile Include="Classes\ItemSortInfo.cs" />
+      <Compile Include="Classes\ItemSortStatus.cs" />
+      <Compile Include="EditInventoryOptionsForm.cs" />
+      <Compile Include="EditInventoryOptionsForm.Designer.cs" />
+      <Compile Include="LisbethRuleGenerator.cs" />
+      <Compile Include="SortType.cs" />
+      <Compile Include="Strings.Designer.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include=".gitignore" />
+      <Content Include="AutoRetainerSort.sln" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="AddNewInventoryForm.resx" />
+      <EmbeddedResource Include="AddNewItemForm.resx" />
+      <EmbeddedResource Include="AutoRetainerSortForm.resx" />
+      <EmbeddedResource Include="EditInventoryOptionsForm.resx" />
+      <EmbeddedResource Include="Strings.resx" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="GreyMagic, Version=1.0.60.0, Culture=neutral, PublicKeyToken=260525fa2b0e778a">
+        <HintPath>..\..\GreyMagic.dll</HintPath>
+      </Reference>
+      <Reference Include="PresentationCore" />
+      <Reference Include="RebornBuddy, Version=1.0.455.0, Culture=neutral, PublicKeyToken=48d7174f8a943034">
+        <HintPath>..\..\RebornBuddy.exe</HintPath>
+      </Reference>
+      <Reference Include="System" />
+      <Reference Include="System.Drawing" />
+      <Reference Include="System.Windows.Forms" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Quest Behaviors\__LlamaLibrary\LlamaLibrary.csproj">
+        <Project>{196ee308-0205-4cc4-b449-51064f7e9960}</Project>
+        <Name>LlamaLibrary</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
