@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ff14bot.Managers;
 using static AutoRetainerSort.Classes.ItemSortInfo;
@@ -9,26 +10,24 @@ namespace AutoRetainerSort
 {
     public partial class AddNewItemForm : Form
     {
-        private static Dictionary<uint, string> _itemNameCache;
-        public static Dictionary<uint, string> ItemNameCache
+        private static List<SearchResult> _itemNameCache;
+        public static List<SearchResult> ItemNameCache
         {
             get
             {
                 if (_itemNameCache == null)
                 {
-                    _itemNameCache = new Dictionary<uint, string>();
-
+                    var unorderedList = new HashSet<SearchResult>();
                     foreach (var idItemPair in DataManager.ItemCache)
                     {
-                        var itemId = idItemPair.Key;
-                        var itemInfo = idItemPair.Value;
-                        if (itemId == 0 || itemId > QualityOffset || itemInfo == null || string.IsNullOrEmpty(itemInfo.CurrentLocaleName))
+                        if (idItemPair.Key == 0 || idItemPair.Key > QualityOffset || idItemPair.Value == null || string.IsNullOrEmpty(idItemPair.Value.CurrentLocaleName))
                         {
                             continue;
                         }
-
-                        _itemNameCache[itemId] = itemInfo.CurrentLocaleName;
+                        unorderedList.Add(new SearchResult(idItemPair.Key, idItemPair.Value.EnglishName));
                     }
+
+                    _itemNameCache = unorderedList.OrderBy(x => x.Name.Length).ThenBy(x => x.RawItemId).ToList();
                 }
 
                 return _itemNameCache;
@@ -62,31 +61,17 @@ namespace AutoRetainerSort
                 return;
             }
 
-            var splitSearchText = textBoxSearch.Text.Split(' ');
+            string[] splitSearchText = textBoxSearch.Text.Split(' ');
             var foundCount = 0;
-            foreach (var idNamePair in ItemNameCache)
+            foreach (SearchResult searchResult in ItemNameCache)
             {
-                var itemName = idNamePair.Value;
-                var matchCount = 0;
-                for (var i = 0; i < splitSearchText.Length; i++)
+                if (searchResult.Name.MatchesSearch(splitSearchText))
                 {
-                    if (itemName.IndexOf(splitSearchText[i], StringComparison.OrdinalIgnoreCase) < 0)
+                    searchResults.Add(searchResult);
+                    if (++foundCount >= 10)
                     {
-                        continue;
+                        break;
                     }
-
-                    matchCount++;
-                }
-
-                if (matchCount < splitSearchText.Length)
-                {
-                    continue;
-                }
-
-                searchResults.Add(new SearchResult(idNamePair.Key, itemName));
-                if (++foundCount >= 10)
-                {
-                    break;
                 }
             }
 
@@ -149,11 +134,11 @@ namespace AutoRetainerSort
         public bool IncludeCollectable => checkBoxCollectable.Checked;
     }
 
-    public class SearchResult
+    public class SearchResult : IEquatable<SearchResult>
     {
         public readonly string Name;
 
-        public uint RawItemId;
+        public readonly uint RawItemId;
 
         public override string ToString()
         {
@@ -165,5 +150,22 @@ namespace AutoRetainerSort
             RawItemId = rawItemId;
             Name = name;
         }
+
+        public bool Equals(SearchResult other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return RawItemId == other.RawItemId;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((SearchResult)obj);
+        }
+
+        public override int GetHashCode() => (int)RawItemId;
     }
 }

@@ -45,6 +45,7 @@
       <Compile Include="Classes\ItemSortStatus.cs" />
       <Compile Include="EditInventoryOptionsForm.cs" />
       <Compile Include="EditInventoryOptionsForm.Designer.cs" />
+      <Compile Include="Extensions.cs" />
       <Compile Include="LisbethRuleGenerator.cs" />
       <Compile Include="SortType.cs" />
       <Compile Include="Strings.Designer.cs" />
