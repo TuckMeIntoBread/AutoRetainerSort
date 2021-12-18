@@ -4,13 +4,13 @@ using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using AutoRetainerSort.Classes;
 using ff14bot.Helpers;
 using ff14bot.Managers;
-using LlamaBotBases.AutoRetainerSort.Classes;
 using LlamaLibrary.Helpers;
 using Newtonsoft.Json;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public class AutoRetainerSortSettings : JsonSettings
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     partial class AutoRetainerSortForm
     {

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Media;
 using ff14bot.Managers;
+using LlamaBotBases.AutoRetainerSort.Classes;
 using LlamaLibrary.Logging;
 using Newtonsoft.Json;
 
-namespace LlamaBotBases.AutoRetainerSort.Classes
+namespace AutoRetainerSort.Classes
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class ItemSortInfo : IEquatable<ItemSortInfo>

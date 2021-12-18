@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using LlamaLibrary.RemoteWindows;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public partial class AddNewInventoryForm : Form
     {

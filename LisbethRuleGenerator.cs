@@ -9,7 +9,7 @@ using LlamaLibrary.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public static class LisbethRuleGenerator
     {

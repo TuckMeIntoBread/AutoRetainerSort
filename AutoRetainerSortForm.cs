@@ -8,7 +8,7 @@ using LlamaBotBases.AutoRetainerSort.Classes;
 using LlamaLibrary.Logging;
 using LlamaLibrary.RemoteWindows;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public partial class AutoRetainerSortForm : Form
     {

@@ -1,11 +1,12 @@
 ﻿// ReSharper disable InconsistentNaming
+
 using System;
 using System.Linq;
 using ff14bot.Enums;
 using LlamaBotBases.AutoRetainerSort.Classes;
 using Newtonsoft.Json;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public enum SortType : byte
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ff14bot.Managers;
-using static LlamaBotBases.AutoRetainerSort.Classes.ItemSortInfo;
+using static AutoRetainerSort.Classes.ItemSortInfo;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public partial class AddNewItemForm : Form
     {
@@ -22,7 +22,7 @@ namespace LlamaBotBases.AutoRetainerSort
                     {
                         var itemId = idItemPair.Key;
                         var itemInfo = idItemPair.Value;
-                        if (itemId == 0 || itemId > QualityOffset || itemInfo == null)
+                        if (itemId == 0 || itemId > QualityOffset || itemInfo == null || string.IsNullOrEmpty(itemInfo.CurrentLocaleName))
                         {
                             continue;
                         }

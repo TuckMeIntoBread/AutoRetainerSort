@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ff14bot.Managers;
+using LlamaBotBases.AutoRetainerSort.Classes;
 using LlamaLibrary.RetainerItemFinder;
 
-namespace LlamaBotBases.AutoRetainerSort.Classes
+namespace AutoRetainerSort.Classes
 {
     public class CachedInventory
     {

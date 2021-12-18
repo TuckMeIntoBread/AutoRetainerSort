@@ -1,5 +1,5 @@
 ﻿
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     partial class AddNewItemForm
     {

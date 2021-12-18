@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using AutoRetainerSort.Classes;
 using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.AClasses;
@@ -21,7 +22,7 @@ using LlamaLibrary.RetainerItemFinder;
 using LlamaLibrary.Retainers;
 using TreeSharp;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public class AutoRetainerSort : BotBase
     {

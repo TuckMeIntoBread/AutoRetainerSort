@@ -5,9 +5,9 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using LlamaBotBases.AutoRetainerSort.Classes;
 using LlamaLibrary.Logging;
-using static LlamaBotBases.AutoRetainerSort.Classes.ItemSortInfo;
+using static AutoRetainerSort.Classes.ItemSortInfo;
 
-namespace LlamaBotBases.AutoRetainerSort
+namespace AutoRetainerSort
 {
     public partial class EditInventoryOptionsForm : Form
     {
