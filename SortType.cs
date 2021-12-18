@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
+using AutoRetainerSort.Classes;
 using ff14bot.Enums;
-using LlamaBotBases.AutoRetainerSort.Classes;
 using Newtonsoft.Json;
 
 namespace AutoRetainerSort

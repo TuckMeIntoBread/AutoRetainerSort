@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ff14bot.Managers;
-using LlamaBotBases.AutoRetainerSort.Classes;
 using LlamaLibrary.RetainerItemFinder;
 
 namespace AutoRetainerSort.Classes

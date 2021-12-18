@@ -9,7 +9,7 @@ using LlamaLibrary.RetainerItemFinder;
 using LlamaLibrary.Structs;
 
 // ReSharper disable once CheckNamespace
-namespace LlamaBotBases.AutoRetainerSort.Classes
+namespace AutoRetainerSort.Classes
 {
     public static class ItemSortStatus
     {

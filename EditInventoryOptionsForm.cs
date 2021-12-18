@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Media;
-using LlamaBotBases.AutoRetainerSort.Classes;
+using AutoRetainerSort.Classes;
 using LlamaLibrary.Logging;
 using static AutoRetainerSort.Classes.ItemSortInfo;
 

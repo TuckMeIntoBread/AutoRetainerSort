@@ -12,7 +12,6 @@ using ff14bot.AClasses;
 using ff14bot.Behavior;
 using ff14bot.Enums;
 using ff14bot.Managers;
-using LlamaBotBases.AutoRetainerSort.Classes;
 using LlamaLibrary.Extensions;
 using LlamaLibrary.Helpers;
 using LlamaLibrary.Logging;

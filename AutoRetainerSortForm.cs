@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Media;
-using LlamaBotBases.AutoRetainerSort.Classes;
+using AutoRetainerSort.Classes;
 using LlamaLibrary.Logging;
 using LlamaLibrary.RemoteWindows;
 
